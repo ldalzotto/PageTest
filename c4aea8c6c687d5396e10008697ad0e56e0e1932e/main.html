@@ -1,0 +1,32 @@
+<head>
+  <script src="./library.js"></script>
+  <script src="./main.js"></script>
+  <script>
+    Module['onRuntimeInitialized'] = function () {
+
+      _initialize();
+      let l_main_loop = (p_ok_cb) => {
+        if (!_main_loop()) {
+          _terminate();
+        }
+        else {
+          requestAnimationFrame(l_main_loop);
+        }
+      };
+
+      l_main_loop();
+    }
+  </script>
+</head>
+
+<body>
+  <div id="body">
+  </div>
+  <div>
+    Source code : <a href="https://github.com/ldalzotto/MyLittleEngine">https://github.com/ldalzotto/MyLittleEngine</a>
+  </div>
+  <div>
+    Automatically built from the commit <a href="https://github.com/ldalzotto/MyLittleEngine/commit/c4aea8c6c687d5396e10008697ad0e56e0e1932e">c4aea8c6c687d5396e10008697ad0e56e0e1932e</a>.
+    Associated to the pull request : <a href="https://github.com/ldalzotto/MyLittleEngine/pull/34">https://github.com/ldalzotto/MyLittleEngine/pull/34</a>.
+  </div>
+</body>
